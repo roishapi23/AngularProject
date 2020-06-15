@@ -27,6 +27,7 @@ export class FinalCartComponent implements OnInit {
       this.usersService.isUserLoggedIn = true;
     }
 
+    
     let observable = this.cartsService.getCustomerFinalCart();
     observable.subscribe(finalCart =>{
 
