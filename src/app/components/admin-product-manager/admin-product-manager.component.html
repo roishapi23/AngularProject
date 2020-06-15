@@ -1,0 +1,77 @@
+<br>
+<button id="newProductButton" title="New product" (click)="displayNewproductArea()"><b>+</b></button>
+<br>
+<br>
+
+<div class="container">
+
+  <div class="areaDescription" *ngIf="productsService.adminCurrentChosenProduct == null && productsService.openedNewProductArea == false">
+      <img class="completedImg" src="http://localhost:3000/generalFiles/adminPic.png" width="270" height="200">
+      <br><br><h3><b>Dear Admin</b></h3>
+      <h3>Here you can <br> edit and add<br>products </h3>
+  </div>
+  <div class="editArea" *ngIf="productsService.adminCurrentChosenProduct != null && productsService.openedNewProductArea == false">
+    <form #updateProductForm="ngForm">
+      <h3>Edit Product</h3>
+        <h4>Product ID:</h4>
+        <input  #id="ngModel" name="id" type="text" disabled placeholder="Product ID" [(ngModel)]="productsService.adminCurrentChosenProduct.id">
+        <h4>Name:</h4>
+        <input #nameUpdate="ngModel" name="updatedName" required type="text" placeholder="Product name" [(ngModel)]="productsService.adminCurrentChosenProduct.productName">
+        <h4>Price:</h4>
+      <input #priceUpdate="ngModel" name="updatedPrice" required type="number" placeholder="Product price" [(ngModel)]="productsService.adminCurrentChosenProduct.price">
+  
+        <h4>Category:</h4>
+      <select #categoryUpdate="ngModel" required name="categoryUpdate"[(ngModel)]="productsService.adminCurrentChosenProduct.categoryId">
+      <!-- <option value="{{productsService.adminCurrentChosenProduct.categoryId}}" selected>{{productsService.adminCurrentChosenProduct.categoryId}}</option> -->
+      <option value="{{productsService.productCategoryNameBeforeUpdate}}" *ngIf="productsService.isUrlAtSearch == false" selected>{{productsService.productCategoryNameBeforeUpdate}}</option>
+      <option *ngFor="let category of productsService.categorysArrayWithOutChosenProductCategory">{{category.name}}</option>
+      </select>
+  
+      <h4>Image:</h4>
+
+      <button (click)="onClick()">  
+            Choose photo  
+        </button> 
+
+      <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" style="display:none;" />
+      <br><br><input type="button" [disabled]="updateProductForm.form.invalid" (click)="uploadFiles()" value="Update product">
+
+    </form>
+
+  </div>
+ 
+  <div class="newProductArea" *ngIf="productsService.openedNewProductArea == true">
+    <form #addProductForm="ngForm">
+      <h3>Add new product</h3>
+    <h4>Name:</h4>
+    <input #nameInput="ngModel" type="text" name="name" placeholder="Product name" required [(ngModel)]="newProduct.productName">
+    <h4>Price:</h4>
+    <input #priceInput="ngModel" type="number" min="0" name="price" placeholder="Product price" required [(ngModel)]="newProduct.price">
+    <h4>Category:</h4>
+  
+    <select #categoryInput="ngModel" required name="category" [(ngModel)]="newProduct.categoryId">
+      <option value=1>Meat&Fish</option>
+      <option value=2>Milk&Eggs</option>
+      <option value=3>Vegtabels&Fruits</option>
+      <option value=4>Wine&Drinks</option>
+    </select>
+  
+    <h4>Image:</h4>
+
+    <button (click)="onClick()">  
+    Choose photo  
+    </button> 
+    <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" style="display:none;" />
+    <br><br><input type="button" [disabled]="addProductForm.form.invalid" (click)="uploadFiles()" value="Add product">
+    </form>
+    
+  </div>
+    
+  <div *ngIf="productsService.updatedProssesOver && productsService.openedNewProductArea == false">
+          <h2>{{afterUpdateMessage}}</h2>
+  </div>
+  <div *ngIf="productsService.updatedProssesOver == true && productsService.openedNewProductArea == true">
+          <h2>{{afterUpdateMessage}}</h2>
+  </div>
+  <br>
+</div>

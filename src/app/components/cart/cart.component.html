@@ -1,0 +1,58 @@
+<div class="cart">
+
+        
+    <div class="cartHeader">
+        <img title="Back" id="back" src="http://localhost:3000/generalFiles/left.png" height="37" width="42" (click)="back()">
+        <h4>My cart</h4>
+        <img src="http://localhost:3000/generalFiles/cart.png" height="35" width="50">
+    </div>
+    <div class="bill">
+        <h5>Total price: ₪ {{cartsService.cartTotalPrice}}</h5>
+        <button (click)="navToPayment()" class="btn btn-success btn-sm">
+           <span>Order </span>
+            <img src="http://localhost:3000/generalFiles/cartIcon.png" height="20" width="20" >
+        </button>
+    </div>
+    
+    <div class="itemsArea">
+        
+        <table class="table table-striped table-dark">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" id="deleteAll">
+                        <img title="Empty cart" (click)="emptyCart()" src="http://localhost:3000/generalFiles/pngfuel.com (18).png" height="25" width="26" >
+                    </th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cartItem of cartItems; let i=index">
+                    <td scope="row">
+                        <img  title="Delete item" class="xImg" (click)=[(deleteCartItem(cartItem.id))] src="http://localhost:3000/generalFiles/X.png" height="20" width="21">
+                        <!-- <img class="glyphicon glyphicon-remove"> -->
+                    </td>
+                    <td>{{cartItem.productName}}</td>
+                    <td>{{cartItem.amount}}</td>
+                    <td>₪ {{cartItem.totalPrice}}</td>
+                </tr>
+            </tbody>
+            <!-- <tfoot>
+                <tr scope="row">
+                    <th></th>
+                    <th>Total Price: </th>
+                    <th>₪ {{cartsService.cartTotalPrice}} </th>
+                    <th></th>
+                </tr>
+            </tfoot> -->
+        </table>
+    </div>
+    <!-- <div class="bill">
+        <h5>Total price: ₪ {{cartsService.cartTotalPrice}}</h5>
+        <button (click)="navToPayment()" class="btn btn-success btn-sm">
+           <span>Order </span>
+            <img src="../../../assets/cartIcon.png" height="20" width="20" >
+        </button>
+    </div> -->
+</div>

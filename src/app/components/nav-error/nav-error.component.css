@@ -1,0 +1,17 @@
+section {
+    min-height: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 columns */
+    grid-template-rows: 100% ;
+}
+
+main {
+    min-height: 75%;
+    grid-column: span 12;   
+    background-image: url('http://localhost:3000/generalFiles/wine Wallpaper(1).png');
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

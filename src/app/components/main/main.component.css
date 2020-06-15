@@ -1,0 +1,77 @@
+section {
+    min-height: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 columns */
+    grid-template-rows: 100% ; 
+}
+
+
+.welcome {
+
+    float: left;
+    width:50%;
+    min-height: 100%;
+
+}
+
+.status {
+
+    overflow: auto;
+    width:50%;
+    min-height: 100%;
+    
+}
+
+section > * {
+    border: 1px solid black;
+
+}
+
+aside {
+    grid-column: span 3;
+    background-image: url('http://localhost:3000/generalFiles/background-2462431_1920.jpg');
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    min-height: 75%;
+    grid-column: span 9;   
+    background-image: url('http://localhost:3000/generalFiles/wine Wallpaper(1).png');
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 860px) {
+    section{
+        height: 500px;
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr); /* 12 columns */
+        grid-template-rows: 100% ; 
+    }
+    .welcome {
+        width:100%;
+        /* min-height: 100%; */
+        grid-column: span 12;
+    }
+    main{
+        grid-column: span 12;
+        background-image: url('http://localhost:3000/generalFiles/wine Wallpaper(1).png');
+    }
+    aside{
+        height: 500px;
+        grid-column: span 12;
+        /* height: 40%; */
+    }
+    .status {
+    width:100%;
+    /* min-height: 100%; */
+    grid-column: span 12;
+    }
+}

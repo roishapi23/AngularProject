@@ -1,0 +1,23 @@
+
+#newProductButton{
+    right: 5;
+}
+
+.container{
+    /* background-color: rgb(255, 255, 255);
+    opacity: 0.5; */
+    width: auto;
+     background: rgba(255, 255, 255, 0.7);
+    -pie-background:  rgba(255, 255, 255, 0.65);
+    border-radius: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    /* behavior: url(PIE.htc); */
+}
+
+
+h3{
+    color: black;
+    text-shadow: 2px 1px 1px rgb(96, 93, 93), 0 0 10px white, 0 0 4px white;
+}

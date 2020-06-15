@@ -1,0 +1,43 @@
+input {
+    width: 200px;
+    font-size: large;
+    margin: 10px;
+    padding : 10px;    
+    transition: 0.3s;
+    /* Round corners button */
+    border-radius: 25px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    outline: none;
+}
+
+input:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    width: 220px;
+}
+
+div{    
+    /* text-align: center; */
+    margin: auto;
+
+    /* catches the full space to the end of the screen */
+    display: block;  
+}
+
+form{
+    column-span: all;
+}
+
+#logo{    
+    width: 40%;
+    height: auto;
+}
+
+.loginContainer{
+    margin-top: 10%;
+}
+
+h1,h3{
+    color: white;
+    text-shadow: 5px 4px 4px black, 0 0 10px black, 0 0 4px rgb(69, 148, 164);
+}
+

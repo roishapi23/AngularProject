@@ -1,0 +1,42 @@
+
+<br><br><br><br><br>
+
+<h2> Hey {{usersService.customerName}} ! </h2>
+<br>
+<div *ngIf="cartsService.userFirstTime == true">
+    <h3>We missed you</h3><br>
+    <h3>Ready to fill your first cart?</h3><br>
+
+    <div class="box-1">
+        <button class="btn btn-one" (click)="navigateToShop()">
+            <span> Open your first cart</span>
+        <img src="http://localhost:3000/generalFiles/cartIcon.png" height="20" width="20" >
+    </button>
+    </div>
+</div>
+<div *ngIf="cartsService.userHasOpenCart == true">
+    <h3>You have an open cart</h3>
+    <h3> from </h3> <h4>{{cartDate}}</h4><br>
+
+    <div class="box-1">
+        <button class="btn btn-one" (click)="navigateToShop()">
+            <span>Resume shopping</span>
+            <img src="http://localhost:3000/generalFiles/cartIcon.png" height="20" width="20" >
+        </button>
+    </div>
+    
+</div>
+
+<div *ngIf="cartsService.userHasOldCart == true">
+    <h3>We are so happy to have you back</h3><br>
+    <h3>Your last purchase was on {{cartDate}} </h3><br>
+
+    <div class="box-1">
+        <button class="btn btn-one" (click)="navigateToShop()">
+           <span>Start Shopping</span>
+        <img src="http://localhost:3000/generalFiles/cartIcon.png" height="20" width="20" >
+    </button>
+    </div>
+</div>
+
+

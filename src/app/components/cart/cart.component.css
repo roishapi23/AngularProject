@@ -1,0 +1,86 @@
+.cart {
+    min-height: 100%;
+    /* border: 2px solid black; */
+    
+    text-align: center;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 columns */
+    /* grid-template-rows: 19% 40% 11% ; 2 rows */
+}
+
+
+h4, h5{ 
+    display: inline-block;
+}
+
+.cartHeader{
+    top: 0;
+    grid-column: span 12;
+    padding: 2%;
+    background-color: ivory;
+    border-bottom: 2px solid black;
+}
+
+.itemsArea{
+    grid-column: span 12;
+    max-height: 580px;
+    overflow: auto;
+}
+.bill{
+    grid-column: span 12;
+    /* width: 25%; */
+    background-color:#cc7a00;
+    text-align: center;
+    /* box-sizing: border-box; */
+    /* border: 2px solid black ; */
+    padding: 0.5%;
+    /* position: fixed; */
+    /* bottom: 0; */
+}
+.bill > h5{
+    margin-right: 10%;
+}
+
+.xImg:hover{
+    cursor: pointer;
+    /* box-shadow: 0 20px 20px 0 rgba(0,0,0,0.24), 0 20px 0px 0 rgba(0,0,0,0.19); */
+}
+#deleteAll:hover{
+    cursor: pointer;
+    /* box-shadow: 0 20px 20px 0 rgba(0,0,0,0.24), 0 20px 0px 0 rgba(0,0,0,0.19); */
+}
+
+
+
+/* body{
+    height: 100%;
+} */
+
+/* table{
+    height: 100%;
+    text-align: center;
+ 
+}
+thead{
+    height: 20%;
+}
+tbody{
+    height: 70%;
+}
+tfoot{
+    height: 10%;
+} */
+/* #delete{
+    width: 1%;
+} */
+
+
+#back{
+    float: left;
+}
+
+#back:hover{
+    cursor: pointer;
+}
+

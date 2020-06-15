@@ -1,0 +1,46 @@
+a{
+    cursor: pointer;
+}
+
+nav{
+    position: sticky
+}
+
+#allLinks{
+    margin: auto;
+}
+
+#singleProductArea{
+    cursor: pointer;
+}
+#singleProductArea:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    /* border: -2px solid black; */
+}
+
+.productsArea{
+  background-attachment: fixed;
+    background-image: url('http://localhost:3000/generalFiles/Blue Sea Cool Desktop Wallpaper.png');
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+#searchImg{
+    margin-right: 10px;
+    margin-top: 3.5px;
+}
+#searchImg:hover{
+    cursor: pointer;    
+    box-shadow: 20px black;
+}
+
+#searchInput{
+    border: 2px solid rgb(53, 171, 161) ;
+    border-radius: 8px;
+    outline: none;
+}
+#searchInput:focus{
+    border: 2px solid rgb(55, 183, 55);
+}

@@ -1,0 +1,96 @@
+a{
+    cursor: pointer;
+}
+/* nav{
+    position: sticky;
+} */
+
+section {
+    min-height: 100%;
+    text-align: center;
+    /* box-sizing: border-box; */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 columns */
+    grid-template-rows: 100% ; /* 2 rows */
+}
+
+
+/* .welcome {
+    border: 1px solid black;
+    box-sizing: border-box;
+    background-color: aqua;
+    float: left;
+    width:50%;
+    min-height: 100%;
+
+} */
+
+/* .status {
+    border: 1px solid black;
+    box-sizing: border-box;
+    grid-column: span 6;   
+    background-color: orange;
+    overflow: auto;
+    width:50%;
+    min-height: 100%;
+    
+} */
+
+section > * {
+    border: 1px solid black;
+}
+
+
+aside {
+    grid-column: span 3;
+    /* min-height: 100%; */
+    /* max-height: initial; */
+    background-image: url('http://localhost:3000/generalFiles/background-2462434_1920.jpg');
+    
+
+    /* height: 100%; */
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    min-height: 75%;
+    grid-column: span 9;   
+    /* background-color: orange; */
+    overflow: auto;
+}
+
+nav{
+    position: sticky
+}
+
+/* .productsArea{
+    background-image: url('../../../assets/wine Wallpaper.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 90.8%;
+} */
+
+#allLinks{
+    margin: auto;
+}
+
+#searchImg{
+    margin-right: 10px;
+    margin-top: 3.5px;
+}
+#searchImg:hover{
+    cursor: pointer;    
+    box-shadow: 20px black;
+}
+
+#searchInput{
+    border: 2px solid rgb(53, 171, 161) ;
+    border-radius: 8px;
+    outline: none;
+}
+#searchInput:focus{
+    border: 2px solid rgb(55, 183, 55);
+}

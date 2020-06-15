@@ -1,0 +1,52 @@
+
+
+
+
+<div class="formContainer" *ngIf="purchaseService.isPurchaseCompleted == false">
+    <form #shippingForm="ngForm">
+                <input #cityInput="ngModel" (click)="fillDetails()" type="string" placeholder="City" required name="city" [(ngModel)]="customerShippingDetails.city"><br>
+                <input #streetInput="ngModel" (click)="fillDetails()" type="string" placeholder="Street" required name="street" [(ngModel)]="customerShippingDetails.street"><br>
+                <input #dateInput="ngModel" (click)="fillDetails()" type="date" placeholder="Date" required name="date" [min]="minDate" [(ngModel)]="customerShippingDetails.dateOfDelivery"><br>
+                
+                <input #creditCardInput="ngModel" (click)="fillDetails()" type="number" placeholder="Card Number" required name="cardNumber" [(ngModel)]="customerShippingDetails.creditCard"><br>
+                
+                
+               
+                <input type="button" [disabled]="shippingForm.form.invalid" (click)="pay()" value="Pay" data-toggle="modal" data-target="#paymentModal"/>
+    </form>
+        <br>
+</div>
+
+<div class="dateFullyBooked" *ngIf="isDateAvailable == false">
+    <img class="completedImg" src="http://localhost:3000/generalFiles/X.png" width="10%" height="10%">
+    <h3>Date is fully booked <br> Please choose another day for delivery</h3>
+</div>
+<div class="purchaseCompletedArea" *ngIf="purchaseService.isPurchaseCompleted">
+    <img class="completedImg" src="http://localhost:3000/generalFiles/completed.png" width="100" height="100">
+    <h3>Purchase completed</h3><br>
+    <h3>Your resarvation number is: </h3><br>
+    <h2>{{resarvationNumber}}</h2>
+    <input type="button" (click)="navToHomePage()" value="Main page">    
+  </div>
+  
+  <div class="downlodPdfButton" *ngIf="purchaseService.isPurchaseCompleted">
+    <!-- <input type="button" (click)="createPdf()" value="Download recipt"> -->
+    <button (click)="createPdf()">
+      <img src="http://localhost:3000/generalFiles/download.png" height="20" width="20">
+           <span> Download recipt</span>
+        </button>
+    </div>
+
+
+<div *ngIf="isDateAvailable == true">
+  <img src="http://localhost:3000/generalFiles/payment.png" height="120" width="280" >
+</div>
+
+
+
+
+
+
+
+
+

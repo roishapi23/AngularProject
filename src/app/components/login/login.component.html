@@ -1,0 +1,30 @@
+<br>
+<br>
+
+
+
+
+<div class="loginContainer">
+    <h1> Login </h1>
+  
+    <form #loginForm="ngForm">
+        <input #emailInput="ngModel" type="text" placeholder="Email" name="email" [(ngModel)]="userLoginDetails.email" required pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"><br>
+        <span *ngIf="emailInput.errors?.required && !emailInput.pristine">Please enter your email address</span>
+        <span *ngIf="emailInput.errors?.pattern && emailInput.touched">Please make sure your email is valid</span>
+        
+        <input #passwordInput="ngModel" type="password" placeholder="Password" required pattern="^[a-zA-Z0-9]{6,}$" name="password" [(ngModel)]="userLoginDetails.password"><br>
+        <span *ngIf="passwordInput.errors?.required && !passwordInput.pristine">Please enter your password</span>
+        <span *ngIf="passwordInput.errors?.pattern && passwordInput.touched">Please at least enter 6 characters</span>
+        <input type="button" [disabled]="loginForm.form.invalid" (click)="login()" value="Login" />
+    </form>
+</div>
+
+<div class="registerLink">
+    <h3>Not a Member?</h3>
+    <input type="button" (click)="routeToRegister()" value="Sign Up !" />
+</div>
+
+<div class="errorAtRegistarion" *ngIf="isLoginFailed">
+    <h6>{{errorMessage}}</h6>
+</div>
+

@@ -1,0 +1,64 @@
+
+<br>
+<br>
+<div>
+    <img id="back" src="http://localhost:3000/generalFiles/pngfuel.com (11).png" height="32" width="42" title="Back" (click)="backToLogin()" *ngIf="firstPartRegisterShow">
+    <img id="back" src="http://localhost:3000/generalFiles/pngfuel.com (11).png" height="32" width="42" title="Back" (click)="backTofirstPartRegisterUI()" *ngIf="secondPartRegisterShow">
+</div>
+
+<div class="registerContainer">
+    <h1> Register </h1>
+    <form #registerForm="ngForm">
+        <div class="firstPart" *ngIf="firstPartRegisterShow">
+            <form #firstPartForm="ngForm">                
+                <input #idNumberInput="ngModel" type="number" placeholder="ID" required pattern="^\d{9}$" name="idNumber" [(ngModel)]="newUserDetails.idNumber"><br>
+                <span *ngIf="idNumberInput.errors?.required && !idNumberInput.pristine">Please enter your ID number</span>
+                <span *ngIf="idNumberInput.errors?.pattern && idNumberInput.touched">Please enter 9 digits</span>
+                
+                <input #emailInput="ngModel" type="text" placeholder="Email" name="email" [(ngModel)]="newUserDetails.email" required pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"><br>
+                <span *ngIf="emailInput.errors?.required && !emailInput.pristine">Please enter your email address</span>
+                <span *ngIf="emailInput.errors?.pattern && emailInput.touched">Please make sure your email is valid</span>
+               
+                <input #passwordInput="ngModel" type="password" placeholder="Password" required pattern="^[a-zA-Z0-9]{6,}$" name="password" [(ngModel)]="newUserDetails.password"><br>
+                <span *ngIf="passwordInput.errors?.required && !passwordInput.pristine">Please enter your password</span>
+                <span *ngIf="passwordInput.errors?.pattern && passwordInput.touched">Please at least enter 6 characters</span>
+                
+                <input #confirmPasswordInput="ngModel" type="password" placeholder="Confirm Password" required pattern="^[a-zA-Z0-9]{6,}$" name="confirmPassword" [(ngModel)]="newUserDetails.confirmPassword"><br>
+                <span *ngIf="confirmPasswordInput.errors?.required && !confirmPasswordInput.pristine">Please confirm your password</span>
+                <span *ngIf="confirmPasswordInput.errors?.pattern && confirmPasswordInput.touched">Please at least enter 6 characters</span>
+                <!-- <span *ngIf="isPasswordsMatch && !confirmPasswordInput.pristine">Please passwords dont match</span> -->
+               
+                <input type="button" [disabled]="firstPartForm.form.invalid" (click)="continueRegistration()" value="continue"/>
+            </form>
+        </div>
+        <div class="secondPart" *ngIf="secondPartRegisterShow">
+            <input #cityInput="ngModel" type="text" placeholder="City" required name="city" [(ngModel)]="newUserDetails.city"><br>
+            <span *ngIf="cityInput.errors?.required && !cityInput.pristine">Please enter your city</span>
+            <input #streetInput="ngModel" type="text" placeholder="Street" required name="street" [(ngModel)]="newUserDetails.street"><br>
+            <span *ngIf="streetInput.errors?.required && !streetInput.pristine">Please enter your street</span>
+            <input #userNameInput="ngModel" type="text" placeholder="Name" required name="name" [(ngModel)]="newUserDetails.name"><br>
+            <span *ngIf="userNameInput.errors?.required && !userNameInput.pristine">Please enter your name</span>
+            <input #familyNameInput="ngModel" type="text" placeholder="Last Name" required name="familyName" [(ngModel)]="newUserDetails.familyName"><br>
+            <span *ngIf="familyNameInput.errors?.required && !familyNameInput.pristine">Please enter your last name</span>
+            <input type="button" [disabled]="registerForm.form.invalid" (click)="register()" value="register" />
+            <!-- <span class="errorMassages">
+                <span *ngIf="userNameInput.errors?.required && !userNameInput.pristine">Please enter your name</span><br>
+            </span>   -->
+        </div>
+    </form>
+</div>
+<!-- <div class="continuRegisterContainer">
+    <form>
+    </form>
+</div> -->
+
+<div class="successRegistarion" *ngIf="registarionCompleted">
+    <br>
+    <h3>Congrats <br>You successfully registerd</h3>
+    <h3>For start shopping<br>Please login</h3>
+    <input type="button" (click)="navToLogin()" value="Take me to login" /> 
+</div>
+
+<div class="errorAtRegistarion" *ngIf="isUserDBDetailsInvalid">
+    <h6>an error happend: <br> {{errorMessage}}</h6>
+</div>

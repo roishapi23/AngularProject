@@ -1,0 +1,38 @@
+/* body{
+    position: static;
+    top: 0;
+} */
+
+body{
+    background-image: url("http://localhost:3000/generalFiles/Wallpaper.png");
+    position: cover;
+}
+
+img:hover{
+    cursor: pointer;
+}
+img{
+   display: inline-block;
+}
+
+input {
+    width: 100px;
+    font-size: large;
+    margin: 4px;
+    padding : 4px;    
+    transition: 0.4s;
+    /* Round corners button */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+    outline: none;
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    opacity: 0.8;
+}
+
+input:hover{
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
+    opacity: 1;
+}

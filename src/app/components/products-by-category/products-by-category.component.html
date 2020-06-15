@@ -1,0 +1,64 @@
+
+<!-- <div class="navbar"> -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav" id="allLinks">
+                  <img id="searchImg" src="http://localhost:3000/generalFiles/searchIcon.png" height="30" width="30" (click)="searchProduct()">
+                  <input id="searchInput" type="text" placeholder="Search.." [(ngModel)]="userSearchInput">
+
+                <a class="nav-item nav-link" (click)="milkAndEggs()"><b>Milks & eggs</b></a>
+                <a class="nav-item nav-link" (click)="vegtabelsAndFruits()"><b>Vegtables & fruits</b></a>
+                <img src="http://localhost:3000/generalFiles/the-sale-2085766_1920.png" height="40" width="80" >
+                <a class="nav-item nav-link" (click)="meatAndFish()"><b>Meat & fish</b></a>
+                <a class="nav-item nav-link" (click)="wineAndDrinks()"><b>Wine & drinks</b></a>
+            </div>
+          </div>
+        </nav>
+
+<div class="productsArea">
+   <br>
+
+   <div *ngIf="notFoundAnyProduct == true">
+      <img class="completedImg" src="http://localhost:3000/generalFiles/sorry.png" width="150" height="120">
+      <h1>Sorry, we do not have a result <br> for your search</h1>
+   </div>
+   
+
+   <div class="container">
+      <div class="row">
+         <div class="col-md-2" *ngFor="let product of productsService.products">
+            <div id="singleProductArea" class="card mb-2 text-white bg-dark" (click)=[(setCurrentClickedProduct(product))]>
+               <img class="card-img-top" src="http://localhost:3000/{{product.image}}" alt="Card image cap" width="40%" height="150">
+               <div class="card-body">
+                  <h6 class="card-title"> {{product.productName}} </h6>
+                  <p class="card-text">₪ {{product.price}}</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- <div class="productsArea">
+   
+   <br>
+
+   <div class="container">
+      <div class="row">
+         <div class="col-md-2" *ngFor="let product of products">
+            <div class="card mb-2 text-white bg-dark">
+               <img class="card-img-top" src="{{product.image}}" alt="Card image cap" width="40%" height="150">
+               <div class="card-body">
+                  <h6 class="card-title"> {{product.productName}} </h6>
+                  <p class="card-text">₪ {{product.price}}</p>
+                  <button (click)=[(setCurrentClickedProduct(product))] class="btn btn-outline-light btn-sm">Add to cart</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   
+</div> -->

@@ -1,0 +1,42 @@
+<div class="cart">
+
+        
+    <div class="cartHeader">
+        <img title="Back" id="back" src="http://localhost:3000/generalFiles/left.png" height="37" width="42" (click)="backToCart()" *ngIf="purchasesService.isPurchaseCompleted == false">
+        <h4>Final cart - total price: ₪ {{cartsService.cartTotalPrice}}</h4>
+        <!-- <h4 id="finalPrice" > Total price: ₪ {{cartsService.cartTotalPrice}}</h4> -->
+        <img id="cartImg" src="http://localhost:3000/generalFiles/fullCart.png" height="35" width="40"><br>
+        <input type="text" (keyup)="markBySearch($event)" name="search" placeholder="Search cart item" [(ngModel)]="searchInput">
+        
+    </div>
+    <!-- <form action="#">
+    </form> -->
+
+      <div class="itemsArea">
+            
+        <table class="table table-striped table-dark">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" id="image">
+                    </th>
+                    <th scope="col"><h4>Item</h4></th>
+                    <th scope="col"><h4>Amount</h4></th>
+                    <th scope="col"><h4>Price</h4></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="cartItem" *ngFor="let cartItem of cartItems; let i=index">
+                    <td scope="row">
+                        <img class="productImg" src="http://localhost:3000/{{cartItem.image}}" height="35" width="36">
+                        
+                    </td>
+                    <td><h4>{{cartItem.productName}}</h4></td>
+                    <td><h4>{{cartItem.amount}}</h4></td>
+                    <td><h4>₪ {{cartItem.totalPrice}}</h4></td>
+                </tr>
+            </tbody>
+        
+        </table>
+    
+    </div>
+</div>  
