@@ -8,14 +8,6 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
-
-
-
-
-
-
-
   
   constructor() { }
 
