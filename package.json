@@ -21,7 +21,7 @@
     "@angular/router": "~8.2.14",
     "bootstrap": "^4.4.1",
     "faker": "^4.1.0",
-    "jspdf": "^1.4.1",
+    "jspdf": "^2.3.1",
     "jspdf-autotable": "^3.4.3",
     "moment": "^2.24.0",
     "ng-modal": "^1.0.2",
